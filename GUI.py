@@ -590,11 +590,11 @@ class App(CTk):
             totalFat.pack(anchor=W,pady=(10,0),padx=10)
         
             if self.p.getWeight()>self.p.getTarget():
-                result=CTkLabel(analyze_frame,text=f"You need to eat {list.totalCalories()-500:.1f} calories a day to lose 0.5kg\nper week",text_color="black",anchor=W,justify=LEFT,font=("Arial", 16))
+                result=CTkLabel(analyze_frame,text=f"You need to eat {self.p.getBMR()-500:.1f} calories a day to lose 0.5kg\nper week",text_color="black",anchor=W,justify=LEFT,font=("Arial", 16))
                 result.pack(anchor=W,pady=(15,0),padx=10)
             
             elif self.p.getWeight()<self.p.getTarget():
-                result=CTkLabel(analyze_frame,text=f"You need to eat {list.totalCalories()+500:.1f} calories a day to gain 0.5kg\nper week",text_color="black",anchor=W,justify=LEFT,font=("Arial", 16))
+                result=CTkLabel(analyze_frame,text=f"You need to eat {self.p.getBMR()+500:.1f} calories a day to gain 0.5kg\nper week",text_color="black",anchor=W,justify=LEFT,font=("Arial", 16))
                 result.pack(anchor=W,pady=(15,0),padx=10)
             
             else:
