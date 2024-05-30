@@ -117,7 +117,12 @@ class Person:
         self.__height=h
         
     def setTarget(self,t):
-        self.__target=t        
+        self.__target=t
+    def getBMR(self):
+        if self.__gender=="Male":
+            return 10*self.__weight + 6.25*self.__height - 5*self.__age + 5
+        else:
+            return 10*self.__weight + 6.25*self.__height - 5*self.__age - 161
 
 class PhoBo(Food):
     def __init__(self,s):
